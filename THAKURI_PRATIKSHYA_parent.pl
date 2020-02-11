@@ -16,7 +16,7 @@ foreach $line (<$fh>){
      $noOfChildren = $words[1];
   }
   else{
-    @filenames = $words;
+    @filenames = @words;
   }
 }
 
