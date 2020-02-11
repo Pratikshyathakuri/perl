@@ -12,7 +12,7 @@ foreach $line (<$fh>){
   chomp $line;
   my @words = split(" ", $line);
 
-  if($words[0] == 't' || $words[0] == 'T'){
+  if($words[0] eq 't' || $words[0] eq 'T'){
      $noOfChildren = $words[1];
   }
   else{
