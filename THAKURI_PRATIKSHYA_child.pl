@@ -6,12 +6,12 @@ use Getopt::Long;
 my $filename = '';
 my $pid = '';
 
-GetOptions("file=s" => \$filename,
+GetOptions("filename=s" => \$filename,
            "pid=s" => \$pid);
 
 my $outFileName = ('out' . $pid . '.txt');   
 
-open(my $fh, "<", $file) || 
+open(my $fh, "<", $filename) || 
 or "Error Opening the File";
 
 open (my $fh2, ">>", $outFileName) or 
