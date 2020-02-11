@@ -5,7 +5,7 @@ use warnings;
 open(my $fh, "<", "in.txt") 
 or die "Cannot open the file";
 
-my @fileNames;
+my @filenames;
 my $noOfChildren;
 my $line;
 foreach $line (<$fh>){
@@ -13,7 +13,7 @@ foreach $line (<$fh>){
   my @words = split(" ", $line);
 
   if($words[0] == 't' || $words[0] == 'T'){
-     $noOfChildren = $word[1];
+     $noOfChildren = $words[1];
   }
   else{
     @filenames = $words;
