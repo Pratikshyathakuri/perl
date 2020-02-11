@@ -40,6 +40,7 @@ for(my $k = 1; $k < 100; $k++){
     or die "Error Opening the File";
 
     my $numLine = 0;
+    $line = '';
     foreach $line (<$outChild>){
       $numLine++;
       if($numLine == $k){
