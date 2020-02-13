@@ -12,10 +12,10 @@ GetOptions("filename=s" => \$filename,
 my $outFileName = ('out' . $pid . '.txt');   
 
 open(my $fh, "<", $filename) 
-or "Error Opening the File";
+|| "Error Opening the File";
 
 open (my $fh2, ">>", $outFileName) 
-or die "Error Opening the File";
+|| die "Error Opening the File";
 truncate $fh, 0;
 
 my $numLine = 0;
