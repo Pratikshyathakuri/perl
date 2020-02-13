@@ -14,7 +14,7 @@ my $outFileName = ('out' . $pid . '.txt');
 open(my $fh, "<", $filename) 
 or "Error Opening the File";
 
-open (my $fh2, ">>", $outFileName) 
+open (my $fh2, ">", $outFileName) 
 or die "Error Opening the File";
 
 my $numLine = 0;
