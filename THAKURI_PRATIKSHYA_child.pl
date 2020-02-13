@@ -20,6 +20,7 @@ or die "Error Opening the File";
 my $numLine = 0;
 while (my $line = <$fh>){
     $numLine++;
+    chomp $line
      my $toWrite;
     if($line){
          $toWrite = 'Child['. $pid .']: Line['. $numLine .']: '.  $line . "\n";
