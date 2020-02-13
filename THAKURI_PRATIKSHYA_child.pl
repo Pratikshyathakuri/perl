@@ -23,7 +23,7 @@ foreach $line (<$fh>){
     $numLine++;
     chomp $line;
     my $toWrite =  'Child['. $pid .']: Line['. $numLine .']: '.  $line . "\n";
-    print $fh2 $toWrite;
+    print $fh2 'Child['. $pid .']: Line['. $numLine .']: '.  $line . "\n";
 }
 
 close $fh;
