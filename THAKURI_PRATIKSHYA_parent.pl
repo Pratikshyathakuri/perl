@@ -46,7 +46,7 @@ for(my $k = 1; $k < 100; $k++){
       $numLine++;
       if($numLine == $k){
         chomp $line;
-        print $outFinal $line;
+        print $outFinal $line . "\n";
       }
     }
       close $outFinal;
