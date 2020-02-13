@@ -18,12 +18,11 @@ open (my $fh2, ">>", $outFileName)
 or die "Error Opening the File";
 truncate $fh, 0;
 
-my $line;
 my $numLine = 0;
-foreach $line (<$fh>){
+foreach my $line (<$fh>){
     $numLine++;
-    chomp $line;
-    my $toWrite =  'Child['. $pid .']: Line['. $numLine .']: '.  $line. "\n";
+    $line;
+    my $toWrite =  'Child['. $pid .']: Line['. $numLine .']: '.  $line;
     print $fh2 $toWrite;
 }
 
