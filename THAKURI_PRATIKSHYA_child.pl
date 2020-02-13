@@ -24,7 +24,7 @@ while (my $line = <$fh>){
     chomp $line;
      my $toWrite;
     if($line){
-         $toWrite = 'Child['. $pid .']: Line['. $numLine .']: '.  $line + "\n";
+         $toWrite = 'Child['. $pid .']: Line['. $numLine .']: '.  $line . "\n";
     }
   
     print $fh2 $toWrite;
