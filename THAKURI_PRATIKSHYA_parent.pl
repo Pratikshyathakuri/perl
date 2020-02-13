@@ -20,6 +20,8 @@ foreach $line (<$fh>){
   }
 }
 
+print $noOfChildren;
+
 close $fh;
 
 for (my $i = 1; $i <= $noOfChildren; $i++){
@@ -34,23 +36,23 @@ for (my $i = 1; $i <= $noOfChildren; $i++){
 for(my $k = 1; $k < 100; $k++){
   for(my $j = 0; $j < $noOfChildren; $j++){
 
-    open(my $outChild , "<", 'out'. ($j).'.txt') 
+    open(my $fh2 , "<", 'out'. ($j).'.txt') 
     or die "Error Opening the File";
 
-    open(my $outFinal , ">>", 'out.txt')
+    open(my $fh3, ">>", 'out.txt')
     or die "Error Opening the File";
 
     my $numLine = 0;
      $line = '';
-    foreach $line (<$outChild>){
+    foreach $line (<$fh2>){
       $numLine++;
       if($numLine == $k){
         chomp $line;
-        print $outFinal $line . "\n";
+        print $fh3 $line . "\n";
       }
     }
-      close $outFinal;
-      close $outChild;
+      close $fh2;
+      close $fh3;
   }
 }
 
