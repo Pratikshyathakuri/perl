@@ -9,7 +9,7 @@ my $pid = '';
 GetOptions("filename=s" => \$filename,
            "pid=s" => \$pid);
 
-my $outFileName = ('out' . $pid . '.txt');   
+my $outFileName = 'out' . $pid . '.txt';   
 
 open(my $fh, "<", $filename) 
 || "Error Opening the File";
