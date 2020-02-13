@@ -9,20 +9,21 @@ my $pid = '';
 GetOptions("filename=s" => \$filename,
            "pid=s" => \$pid);
 
-my $outFileName = 'out' . $pid . '.txt';   
+my $outFileName = ('out' . $pid . '.txt');   
 
 open(my $fh, "<", $filename) 
-|| "Error Opening the File";
+or "Error Opening the File";
 
 open (my $fh2, ">>", $outFileName) 
-|| die "Error Opening the File";
+or die "Error Opening the File";
 truncate $fh, 0;
 
 my $numLine = 0;
-foreach my $line (<$fh>){
+while (my $line = <$fh>){
     $numLine++;
+    chomp $line;
     $line;
-    my $toWrite =  'Child['. $pid .']: Line['. $numLine .']: '.  $line;
+    my $toWrite =  'Child['. $pid .']: Line['. $numLine .']: '.  $line + "\n";
     print $fh2 $toWrite;
 }
 
