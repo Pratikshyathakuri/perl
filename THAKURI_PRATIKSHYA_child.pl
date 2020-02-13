@@ -16,13 +16,15 @@ or "Error Opening the File";
 
 open (my $fh2, ">>", $outFileName) 
 or die "Error Opening the File";
+truncate $fh, 0;
 
 my $line;
 my $numLine = 0;
 foreach $line (<$fh>){
     $numLine++;
-    my $toWrite =  'Child['. $pid .']: Line['. $numLine .']: '.  $line . "\n";
-    print $fh2 'Child['. $pid .']: Line['. $numLine .']: '.  $line . "\n";
+    chomp $line;
+    my $toWrite =  'Child['. $pid .']: Line['. $numLine .']: '.  $line. "\n";
+    print $fh2 $toWrite;
 }
 
 close $fh;
