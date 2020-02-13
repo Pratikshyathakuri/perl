@@ -2,8 +2,7 @@
 use strict;   
 use warnings;
 
-open(my $fh, "<", "in.txt") 
-or die "Cannot open the file";
+open(my $fh, "<", "in.txt") || die "Cannot open the file";
 
 my @filenames;
 my $noOfChildren;
