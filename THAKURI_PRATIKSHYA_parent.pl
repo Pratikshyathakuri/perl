@@ -25,7 +25,7 @@ close $fh;
 for (my $i = 1; $i <= $noOfChildren; $i++){
   my $pid = fork();
   if($pid == 0){
-    print($filenames[$i])
+    print($filenames[$i]);
     exec('./THAKURI_PRATIKSHYA_child.pl -filename ' . $filenames[$i]. ' -pid ' .($i - 1) );
  }
    wait();
